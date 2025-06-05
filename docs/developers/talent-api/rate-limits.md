@@ -1,0 +1,29 @@
+---
+description: Talent API is protected by two rate-limiting processes.
+---
+
+# Rate Limits
+
+### API Key Rate Limits
+
+* For free users, API usage is subject to 5,000 requests/month.
+* Check more details about pricing [here](../api-pricing.md).
+
+### IP Rate Limits
+
+* Each IP address has a maximum of 25 requests in 10 seconds.
+
+
+
+### **Fair Use Policy**&#x20;
+
+The following activities are prohibited:
+
+* **Excessive Use**: Overuse of the API beyond the designated limits that impacts system performance or fairness for other users.
+* **Automated Abuse**: Using scripts, bots, or automated tools to excessively query the API, harvest data, or engage in any behavior that could overload our systems.
+* **Redistribution**: Reselling, sublicensing, or sharing your API Key with unauthorized third parties is strictly prohibited.
+* **Data Misuse**: Manipulating, distorting, or misrepresenting the data obtained from our API, or using the data for illegal purposes.
+
+#### **Inactivity Clause**
+
+* We reserve the right to **deactivate or cancel an API Key** if it has been inactive for more than **30 consecutive days**. Inactivity is defined as **no API requests** made during this period. If your API Key is deactivated due to inactivity, you may need to request a new key or contact support for reinstatement.

@@ -1,0 +1,1221 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API V1",
+    "version": "v1"
+  },
+  "paths": {
+    "/passport_ai/{passport_id}": {
+      "get": {
+        "summary": "Retrieves the Passport AI of another Passport",
+        "tags": [
+          "Passport AI"
+        ],
+        "parameters": [
+          {
+            "name": "passport_id",
+            "in": "path",
+            "description": "Passport id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-API-KEY",
+            "in": "header",
+            "description": "Your Talent Protocol API key",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "AUTHORIZATION",
+            "in": "header",
+            "description": "Your auth token",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "AI information of a passport retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "passport_ai": {
+                      "type": "object",
+                      "properties": {
+                        "ai_bio": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The AI-generated bio of the passport"
+                        },
+                        "ai_generated_at": {
+                          "type": "string",
+                          "format": "date-time",
+                          "nullable": true,
+                          "description": "The timestamp of AI bio generation"
+                        },
+                        "generating_ai": {
+                          "type": "boolean",
+                          "nullable": false,
+                          "description": "Flag indicating if the AI generation is in progress"
+                        },
+                        "ai_tags": {
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "description": "An array of AI-generated tags describing the passport profile"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorized request"
+          }
+        }
+      }
+    },
+    "/passport_ai/current": {
+      "get": {
+        "summary": "Retrieves the AI generated information of the current passport",
+        "tags": [
+          "Passport AI"
+        ],
+        "parameters": [
+          {
+            "name": "X-API-KEY",
+            "in": "header",
+            "description": "Your Talent Protocol API key",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "AUTHORIZATION",
+            "in": "header",
+            "description": "Your auth token",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "AI information of the current passport retrieved"
+          },
+          "401": {
+            "description": "unauthorized request"
+          }
+        }
+      }
+    },
+    "/passport_ai/{passport_id}/generate": {
+      "post": {
+        "summary": "Generates AI bio for another passport if criteria are met and current user admin",
+        "tags": [
+          "Passport AI"
+        ],
+        "parameters": [
+          {
+            "name": "passport_id",
+            "in": "path",
+            "description": "Passport id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-API-KEY",
+            "in": "header",
+            "description": "Your Talent Protocol API key",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "AUTHORIZATION",
+            "in": "header",
+            "description": "Your auth token",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "AI information of a passport retrieved"
+          },
+          "401": {
+            "description": "unauthorized request"
+          },
+          "422": {
+            "description": "When passport score is less than 80"
+          }
+        }
+      }
+    },
+    "/passport_ai/generate": {
+      "post": {
+        "summary": "Generates AI for the current passport if criteria are met",
+        "tags": [
+          "Passport AI"
+        ],
+        "parameters": [
+          {
+            "name": "X-API-KEY",
+            "in": "header",
+            "description": "Your Talent Protocol API key",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "AUTHORIZATION",
+            "in": "header",
+            "description": "Your auth token",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "AI generation triggered for current passport"
+          },
+          "401": {
+            "description": "unauthorized request"
+          }
+        }
+      }
+    },
+    "/passport_ai/bio/toggle": {
+      "put": {
+        "summary": "Toggles the visibility of the AI bio",
+        "tags": [
+          "Passport AI"
+        ],
+        "parameters": [
+          {
+            "name": "X-API-KEY",
+            "in": "header",
+            "description": "Your Talent Protocol API key",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "AUTHORIZATION",
+            "in": "header",
+            "description": "Your auth token",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "AI Bio visibility toggled - to not ignored"
+          },
+          "401": {
+            "description": "unauthorized request"
+          }
+        }
+      }
+    },
+    "/passport_credentials": {
+      "get": {
+        "summary": "Gets the credentials of a passport",
+        "tags": [
+          "Passport Credentials"
+        ],
+        "parameters": [
+          {
+            "name": "passport_id",
+            "in": "query",
+            "required": false,
+            "description": "Passport id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-API-KEY",
+            "in": "header",
+            "description": "Your Talent Protocol API key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "get credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "passport_credentials": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "earned_at": {
+                            "type": "string",
+                            "nullable": true,
+                            "description": "The timestamp of when the passport credential was earned"
+                          },
+                          "id": {
+                            "type": "string",
+                            "nullable": false,
+                            "description": "The id of the passport credential"
+                          },
+                          "category": {
+                            "type": "string",
+                            "nullable": false,
+                            "enum": [
+                              "Activity",
+                              "Identity",
+                              "Skills"
+                            ],
+                            "description": "The category of the credential"
+                          },
+                          "last_calculated_at": {
+                            "type": "string",
+                            "format": "date-time",
+                            "nullable": true,
+                            "description": "The last time the passport credential was calculated"
+                          },
+                          "max_score": {
+                            "type": "integer",
+                            "nullable": false,
+                            "description": "The max score of the passport credential"
+                          },
+                          "name": {
+                            "type": "string",
+                            "nullable": false,
+                            "description": "The name of the passport credential"
+                          },
+                          "score": {
+                            "type": "number",
+                            "nullable": false,
+                            "description": "The score of the passport credential"
+                          },
+                          "type": {
+                            "type": "string",
+                            "nullable": false,
+                            "enum": [
+                              "active_wallet",
+                              "arbitrum_activity",
+                              "base_activity",
+                              "base_buildathon",
+                              "base_builder",
+                              "base_builds",
+                              "base_camp",
+                              "base_learn",
+                              "basename",
+                              "binance_account_bound",
+                              "bnb_activity",
+                              "bonsai",
+                              "bountycaster",
+                              "build",
+                              "celo_builder",
+                              "coinbase_verified_id",
+                              "crypto_developer",
+                              "crypto_nomads",
+                              "cyber_id",
+                              "dao_badge",
+                              "degen",
+                              "developer_dao",
+                              "ens",
+                              "eth_global",
+                              "farcaster",
+                              "fractal_id",
+                              "fwb_member",
+                              "galxe",
+                              "gcr",
+                              "gitcoin",
+                              "github",
+                              "github_engagement",
+                              "github_developer",
+                              "holonym",
+                              "jam_creator_club",
+                              "jump",
+                              "jumper_pass",
+                              "lens",
+                              "linkedin",
+                              "optimism_activity",
+                              "optimism_builder",
+                              "phaver",
+                              "pooly_supporter",
+                              "retro_pgf",
+                              "safe_wallet",
+                              "serotonin",
+                              "scroll_activity",
+                              "scroll_builder",
+                              "social_capital_rank",
+                              "stack_score",
+                              "taikai",
+                              "take_off",
+                              "talent_passport",
+                              "talent_vault",
+                              "the_arena",
+                              "twitter",
+                              "worldcoin",
+                              "yellow_collective",
+                              "zksync_builder"
+                            ],
+                            "description": "The type of the passport credential"
+                          },
+                          "value": {
+                            "type": "string",
+                            "nullable": true,
+                            "description": "The value of the passport credential"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorized request"
+          }
+        }
+      }
+    },
+    "/passport_ips": {
+      "get": {
+        "summary": "Retrieves the list of Passport IPs",
+        "tags": [
+          "Passport IPs"
+        ],
+        "parameters": [
+          {
+            "name": "X-API-KEY",
+            "in": "header",
+            "description": "Your Talent Protocol API key",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "AUTHORIZATION",
+            "in": "header",
+            "description": "Your auth token",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Passport IPs retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "passport_ips": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "ip_address": {
+                            "type": "string"
+                          },
+                          "country_code": {
+                            "type": "string"
+                          },
+                          "city": {
+                            "type": "string"
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "format": "date_time"
+                          }
+                        }
+                      }
+                    },
+                    "pagination": {
+                      "type": "object",
+                      "properties": {
+                        "current_page": {
+                          "type": "integer"
+                        },
+                        "last_page": {
+                          "type": "integer"
+                        },
+                        "total": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorized request"
+          }
+        }
+      }
+    },
+    "/passport_profiles/{passport_id}": {
+      "patch": {
+        "summary": "Updates the profile of a passport",
+        "tags": [
+          "Passport Profiles"
+        ],
+        "parameters": [
+          {
+            "name": "passport_id",
+            "in": "path",
+            "description": "Passport id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-API-KEY",
+            "in": "header",
+            "description": "Your Talent Protocol API key",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "AUTHORIZATION",
+            "in": "header",
+            "description": "Your auth token",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "profile updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "passport_profile": {
+                      "type": "object",
+                      "properties": {
+                        "bio": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The bio of the passport"
+                        },
+                        "display_name": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The display name of the passport"
+                        },
+                        "location": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The location of the passport"
+                        },
+                        "tags": {
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "description": "A tag describing the passport profile"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorized request"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "passport_profile": {
+                    "type": "object",
+                    "properties": {
+                      "display_name": {
+                        "type": "string",
+                        "description": "The display name of the passport"
+                      },
+                      "bio": {
+                        "type": "string",
+                        "description": "The bio of the passport"
+                      },
+                      "tags": {
+                        "type": "string",
+                        "description": "The tags of the passport"
+                      },
+                      "location": {
+                        "type": "string",
+                        "format": "datetime",
+                        "description": "The location of the passport"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/passports": {
+      "get": {
+        "summary": "Get a list of passports sorted by score",
+        "tags": [
+          "Passports"
+        ],
+        "parameters": [
+          {
+            "name": "keyword",
+            "in": "query",
+            "required": false,
+            "description": "Keyword to filter passports by name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-API-KEY",
+            "in": "header",
+            "description": "Your Talent Protocol API key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "passports",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "passports": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "activity_score": {
+                            "type": "number",
+                            "nullable": false,
+                            "description": "The score activity credentials contribute to the passport score"
+                          },
+                          "identity_score": {
+                            "type": "number",
+                            "nullable": false,
+                            "description": "The score identity credentials contribute to the passport score"
+                          },
+                          "skills_score": {
+                            "type": "number",
+                            "nullable": false,
+                            "description": "The score skills credentials contribute to the passport score"
+                          },
+                          "calculating_score": {
+                            "type": "boolean",
+                            "nullable": false,
+                            "description": "Flag indicating if the passport is calculating"
+                          },
+                          "connections_count": {
+                            "type": "integer",
+                            "nullable": false,
+                            "description": "The number of connections of the passport"
+                          },
+                          "human_checkmark": {
+                            "type": "boolean",
+                            "nullable": false,
+                            "description": "Flag indication if the passport has a human checkmark"
+                          },
+                          "last_calculated_at": {
+                            "type": "string",
+                            "format": "date-time",
+                            "nullable": true,
+                            "description": "The last time the passport score was calculated"
+                          },
+                          "main_wallet": {
+                            "type": "string",
+                            "nullable": true,
+                            "description": "The main wallet of the passport"
+                          },
+                          "passport_id": {
+                            "type": "integer",
+                            "nullable": true,
+                            "description": "The id of the passport"
+                          },
+                          "score": {
+                            "type": "number",
+                            "nullable": true,
+                            "description": "The score of the passport"
+                          },
+                          "passport_profile": {
+                            "type": "object",
+                            "nullable": false,
+                            "properties": {
+                              "bio": {
+                                "type": "string",
+                                "nullable": true,
+                                "description": "The bio of the passport"
+                              },
+                              "display_name": {
+                                "type": "string",
+                                "nullable": true,
+                                "description": "The display name of the passport"
+                              },
+                              "location": {
+                                "type": "string",
+                                "nullable": true,
+                                "description": "The location of the passport"
+                              },
+                              "tags": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string",
+                                  "description": "A tag describing the passport profile"
+                                }
+                              }
+                            }
+                          },
+                          "verified_wallets": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "description": "The connected wallets of the passport"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "pagination": {
+                      "type": "object",
+                      "properties": {
+                        "current_page": {
+                          "type": "integer",
+                          "description": "The current page of the fetched records"
+                        },
+                        "last_page": {
+                          "type": "integer",
+                          "description": "The last page of records"
+                        },
+                        "total": {
+                          "type": "integer",
+                          "description": "The total amount of records"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorized request"
+          }
+        }
+      }
+    },
+    "/passports/{id}": {
+      "get": {
+        "summary": "Get a passport using wallet or passport id",
+        "tags": [
+          "Passports"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Passport id or wallet address",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "X-API-KEY",
+            "in": "header",
+            "description": "Your Talent Protocol API key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "passport",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "passport": {
+                      "type": "object",
+                      "properties": {
+                        "activity_score": {
+                          "type": "number",
+                          "nullable": false,
+                          "description": "The score activity credentials contribute to the passport score"
+                        },
+                        "identity_score": {
+                          "type": "number",
+                          "nullable": false,
+                          "description": "The score identity credentials contribute to the passport score"
+                        },
+                        "skills_score": {
+                          "type": "number",
+                          "nullable": false,
+                          "description": "The score skills credentials contribute to the passport score"
+                        },
+                        "calculating_score": {
+                          "type": "boolean",
+                          "nullable": false,
+                          "description": "Flag indicating if the passport is calculating"
+                        },
+                        "connections_count": {
+                          "type": "integer",
+                          "nullable": false,
+                          "description": "The number of connections of the passport"
+                        },
+                        "human_checkmark": {
+                          "type": "boolean",
+                          "nullable": false,
+                          "description": "Flag indication if the passport has a human checkmark"
+                        },
+                        "last_calculated_at": {
+                          "type": "string",
+                          "format": "date-time",
+                          "nullable": true,
+                          "description": "The last time the passport score was calculated"
+                        },
+                        "main_wallet": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The main wallet of the passport"
+                        },
+                        "passport_id": {
+                          "type": "integer",
+                          "nullable": true,
+                          "description": "The id of the passport"
+                        },
+                        "score": {
+                          "type": "number",
+                          "nullable": true,
+                          "description": "The score of the passport"
+                        },
+                        "passport_profile": {
+                          "type": "object",
+                          "nullable": false,
+                          "properties": {
+                            "bio": {
+                              "type": "string",
+                              "nullable": true,
+                              "description": "The bio of the passport"
+                            },
+                            "display_name": {
+                              "type": "string",
+                              "nullable": true,
+                              "description": "The display name of the passport"
+                            },
+                            "location": {
+                              "type": "string",
+                              "nullable": true,
+                              "description": "The location of the passport"
+                            },
+                            "tags": {
+                              "type": "array",
+                              "items": {
+                                "type": "string",
+                                "description": "A tag describing the passport profile"
+                              }
+                            }
+                          }
+                        },
+                        "verified_wallets": {
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "description": "The connected wallets of the passport"
+                          }
+                        },
+                        "merged": {
+                          "type": "boolean",
+                          "nullable": false,
+                          "description": "Flag indicating if the passport was merged"
+                        },
+                        "passport_socials": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "follower_count": {
+                                "type": "string",
+                                "nullable": true,
+                                "description": "The count of followers of the passport social"
+                              },
+                              "following_count": {
+                                "type": "string",
+                                "nullable": true,
+                                "description": "The count of following of the passport social"
+                              },
+                              "location": {
+                                "type": "string",
+                                "nullable": true,
+                                "description": "The location of the passport social"
+                              },
+                              "profile_bio": {
+                                "type": "string",
+                                "nullable": true,
+                                "description": "The bio of the passport social"
+                              },
+                              "profile_display_name": {
+                                "type": "string",
+                                "nullable": true,
+                                "description": "The display name of the passport social"
+                              },
+                              "profile_image_url": {
+                                "type": "string",
+                                "nullable": true,
+                                "description": "The profile image url of the passport social"
+                              },
+                              "profile_name": {
+                                "type": "string",
+                                "nullable": true,
+                                "description": "The name of the passport social"
+                              },
+                              "profile_url": {
+                                "type": "string",
+                                "nullable": true,
+                                "description": "The url of the passport social"
+                              },
+                              "source": {
+                                "type": "string",
+                                "enum": [
+                                  "lens",
+                                  "basename",
+                                  "farcaster",
+                                  "github",
+                                  "linkedin",
+                                  "talent_protocol",
+                                  "builderfi",
+                                  "twitter"
+                                ],
+                                "description": "The source of the passport social"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorized request"
+          }
+        }
+      }
+    },
+    "/perks": {
+      "get": {
+        "summary": "returns all the perks available",
+        "tags": [
+          "Perks"
+        ],
+        "parameters": [
+          {
+            "name": "X-API-KEY",
+            "in": "header",
+            "description": "Your Talent Protocol API Key",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "AUTHORIZATION",
+            "in": "header",
+            "description": "Your auth token",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "perks",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "perks": {
+                      "type": "array",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        }
+                      }
+                    },
+                    "pagination": {
+                      "type": "object",
+                      "properties": {
+                        "current_page": {
+                          "type": "integer",
+                          "description": "The current page of the fetched records"
+                        },
+                        "last_page": {
+                          "type": "integer",
+                          "description": "The last page of records"
+                        },
+                        "total": {
+                          "type": "integer",
+                          "description": "The total amount of records"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorized request with wrong api key"
+          }
+        }
+      }
+    },
+    "/perks/{id}/claim": {
+      "post": {
+        "summary": "claim a perk",
+        "tags": [
+          "Perks"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Perk id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-API-KEY",
+            "in": "header",
+            "description": "Your Talent Protocol API Key",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "AUTHORIZATION",
+            "in": "header",
+            "description": "Your auth token",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successfully claimed perk with claim code",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "perk": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "nullable": false,
+                          "description": "The unique id of the Perk"
+                        },
+                        "claim": {
+                          "type": "object",
+                          "properties": {
+                            "url": {
+                              "type": "string",
+                              "nullable": true,
+                              "description": "The claim url when the claim method is an external link"
+                            },
+                            "quantity": {
+                              "type": "number",
+                              "nullable": false,
+                              "description": "The number of times a perk can be claimed. If 0 there is no limit."
+                            },
+                            "method": {
+                              "type": "string",
+                              "nullable": false,
+                              "description": "The claim method: 1) external link 2) coupon codes 3) off line instructions"
+                            },
+                            "condition": {
+                              "type": "object",
+                              "properties": {
+                                "builder_score_on_chain_flag": {
+                                  "type": "boolean",
+                                  "nullable": false,
+                                  "description": "Whether the builder score to be on chain is a condition for claiming"
+                                },
+                                "minimum_builder_score_flag": {
+                                  "type": "boolean",
+                                  "nullable": false,
+                                  "description": "Whether the builder score value has a minimum as a condition for claiming"
+                                },
+                                "minimum_builder_score": {
+                                  "type": "number",
+                                  "nullable": true,
+                                  "description": "The minimum builder score that should be used if the minimum_builder_score_flag is true"
+                                },
+                                "owning_credential_flag": {
+                                  "type": "boolean",
+                                  "nullable": false,
+                                  "description": "Whether the build should own a credential for the perk to be claimed"
+                                },
+                                "owning_credential_type": {
+                                  "type": "string",
+                                  "nullable": true,
+                                  "description": "The type of the credential that builder needs to own if the owning_credential_flag is true"
+                                },
+                                "owning_credential_name": {
+                                  "type": "string",
+                                  "nullable": true,
+                                  "description": "The name of the credential that builder needs to own if the owning_credential_flag is true"
+                                }
+                              }
+                            },
+                            "code": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              },
+                              "nullable": true,
+                              "description": "The claim codes array that need to be used for claiming"
+                            },
+                            "instructions": {
+                              "type": "string",
+                              "nullable": true,
+                              "description": "Instructions to tell builder how they can claim the perk"
+                            }
+                          }
+                        },
+                        "number_of_claims": {
+                          "type": "number",
+                          "nullable": false,
+                          "description": "Number of times a perk has been successfully claimed"
+                        },
+                        "expires_at": {
+                          "type": "string",
+                          "format": "date-time",
+                          "nullable": true,
+                          "description": "When is the date time the perk expires"
+                        },
+                        "image": {
+                          "type": "string",
+                          "nullable": false,
+                          "description": "The image URL to display for the Perk"
+                        },
+                        "limited": {
+                          "type": "boolean",
+                          "nullable": false,
+                          "description": "Whether the perk is of limited supply"
+                        },
+                        "public": {
+                          "type": "boolean",
+                          "nullable": false,
+                          "description": "Whether the perk is publicly visible"
+                        },
+                        "sponsor": {
+                          "type": "object",
+                          "properties": {
+                            "logo": {
+                              "type": "string",
+                              "nullable": false,
+                              "description": "The logo URL of the sponsor"
+                            },
+                            "name": {
+                              "type": "string",
+                              "nullable": false,
+                              "description": "The name of the sponsor"
+                            }
+                          }
+                        },
+                        "status": {
+                          "type": "string",
+                          "enum": [
+                            "expired",
+                            "sold_out",
+                            "available",
+                            "claimed"
+                          ],
+                          "nullable": false,
+                          "description": "The status of the perk for the particular passport"
+                        },
+                        "sub_title": {
+                          "type": "string",
+                          "nullable": false,
+                          "description": "The sub title when presenting the perk"
+                        },
+                        "title": {
+                          "type": "string",
+                          "nullable": false,
+                          "description": "The title when presenting the perk"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorized request with wrong api key"
+          },
+          "422": {
+            "description": "claiming an already claimed by the same passport"
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "https://{defaultHost}/api/v1",
+      "variables": {
+        "defaultHost": {
+          "default": "api.talentprotocol.com"
+        }
+      }
+    }
+  ]
+}
