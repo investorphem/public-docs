@@ -1,0 +1,7 @@
+---
+hidden: true
+---
+
+# Arbitrum
+
+<table><thead><tr><th>Data Point Name</th><th>Description</th><th>Data Point Category<select><option value="lomLNr0I9Uvm" label="Identity" color="blue"></option><option value="4CcsGQO5qqP1" label="Activity" color="blue"></option><option value="vupUT60FMN6n" label="Credibility" color="blue"></option><option value="N1ap3SKQ2O9w" label="Skills [Developer]" color="blue"></option><option value="DHBuT13t8Hmk" label="Skills [Creator]" color="blue"></option></select></th></tr></thead><tbody><tr><td>First Transaction</td><td>Verifies the timestamp of the first transaction on Arbitrum.</td><td><span data-option="4CcsGQO5qqP1">Activity</span></td></tr><tr><td>ETH Balance</td><td>Verifies the current ETH balance on Arbitrum.</td><td><span data-option="4CcsGQO5qqP1">Activity</span></td></tr><tr><td>Outgoing Transactions</td><td>Verifies the total number of outgoing transactions on Arbitrum.</td><td><span data-option="4CcsGQO5qqP1">Activity</span></td></tr></tbody></table>

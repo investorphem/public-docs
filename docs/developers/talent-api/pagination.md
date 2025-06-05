@@ -1,0 +1,9 @@
+---
+description: >-
+  Talent API Pagination is applicable only to `/search/advanced/profiles`
+  endpoint. Please, visit the corresponding endpoint documentation for more
+  details about pagination.
+---
+
+# Pagination
+

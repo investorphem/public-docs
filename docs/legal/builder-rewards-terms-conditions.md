@@ -1,0 +1,139 @@
+---
+description: >-
+  Terms and Conditions for the Builder Rewards program sponsored by Base, and
+  operated by Talent Protocol.
+---
+
+# Builder Rewards T\&C
+
+Last Updated: June 3, 2025
+
+
+
+These Terms and Conditions ("Terms") govern your participation in the Builder Rewards program ("Program"), sponsored by Base (Coinbase Technologies, Inc.) and powered by Talent Protocol (Reputation DAO LLC).
+
+By participating in the Program, you (i) agree to be bound by these Terms and (ii) represent and warrant you meet all eligibility requirements. Failure to comply with these Terms or meet all eligibility requirements will result in your disqualification of the Program.
+
+### 1. Program Overview
+
+The Program automatically distributes rewards to eligible builders in the Base ecosystem based on their verified onchain and open-source contributions. The Program will distribute 2 ETH weekly beginning on March 31, 2025.
+
+### 2. Eligibility
+
+To be eligible for the Program, you must:
+
+a) Have a Basename (your onchain identity on Base);
+
+b) Have a Builder Score of at least 40;
+
+c) Have earned a Human Checkmark verification on Talent Protocol;
+
+d) Not have a wallet address on the OFAC Specially Designated Nationals (SDN) list;
+
+e) Not be the target of any applicable sanctions laws or owned or controlled by someone that is the subject of sanctions laws, including those  enforced by the Office of Foreign Assets Control (OFAC) and the U.S. Department of Commerce; and
+
+f) Be in compliance with all applicable laws, rules, and regulations, including all applicable anti-money laundering and counter terrorist financing rules and regulations.
+
+### 3. Program Period
+
+The Program begins on March 31, 2025. Weekly rewards reset every Monday at 12pm UTC.
+
+### 4. Reward Structure
+
+Weekly rewards are distributed across three tiers:
+
+a) Tier 1: Top 10 builders share 50% of the reward pool, proportionally to their activity and impact.
+
+b) Tier 2: Next 25 builders share 25% of the reward pool, proportionally to their activity and impact.
+
+c) Tier 3: Next 65 builders share 25% of the reward pool, proportionally to their activity and impact.
+
+### 5. Evaluation Criteria
+
+Your weekly ranking and rewards are determined by three separate factors:
+
+a) Your Builder Score
+
+b) Verified contributions to public crypto repositories on that week
+
+c) Activity on verified contracts you've deployed on Base on that week
+
+The specific weights and formulas used to calculate rankings are proprietary and subject to change at the sole discretion of Talent Protocol.
+
+### 6. Reward Distribution
+
+Rewards are distributed automatically to eligible participants. No application or claim process is required. You must maintain a valid Basename and ETH address for reward distribution. If you do not meet the eligibility criteria at the time of reward distribution, you will forfeit your right to the reward. Earned rewards cannot be carried over to subsequent weeks. All rewards are distributed in ETH.
+
+### 7. Taxes
+
+Recipients are solely responsible for any taxes associated with rewards received through the Program. Neither Base nor Talent Protocol will withhold any taxes or provide tax advice. Recipients should consult with their tax advisors regarding the tax implications of receiving rewards.
+
+### 8. Compliance Measures
+
+For compliance with applicable sanctions regulations:
+
+a) Automatic OFAC screening will be performed on all wallet addresses associated with Program participants;
+
+b) The Human Checkmark verification process helps ensure participants are real individuals, not automated programs or fraudulent accounts;
+
+c) Program administrators reserve the right to request additional verification if deemed necessary for compliance purposes before any reward distribution.
+
+### 9. Prohibited Activities
+
+The following activities are strictly prohibited:
+
+a) Creating multiple accounts to increase chances of receiving rewards;
+
+b) Using automated tools, bots, or other technical measures to artificially inflate activity metrics;
+
+c) Submitting false or misleading information;
+
+d) Engaging in any activity designed to manipulate the Builder Score or other evaluation metrics;
+
+f) Activities that violate applicable laws, including (i) all applicable sanctions laws and regulations, including those enforced by the Office of Foreign Assets Control (OFAC) and the U.S. Department of Commerce and (ii) all applicable anti-money laundering and counter terrorist financing rules and regulations; and
+
+e) Any other activity that violates the spirit of the Program as determined by Program administrators.
+
+### 10. Modifications to the Program
+
+Base and Talent Protocol reserve the right, at their sole discretion, to modify, suspend, or terminate the Program or these Terms at any time and for any reason without prior notice. This includes, but is not limited to, changing eligibility criteria, reward structure, evaluation criteria, or Program duration.
+
+### 11. Privacy
+
+Participation in the Program requires the collection of certain personal information and onchain data. By participating in the Program, you consent to the collection, use, and processing of this information by Base and Talent Protocol in accordance with their respective Privacy Policies.
+
+### 12. License to Use Content
+
+By participating in the Program, you grant Base and Talent Protocol a worldwide, non-exclusive, royalty-free license to use, reproduce, modify, publish, and display your name, Basename, and information about your contributions for promotional and marketing purposes related to the Program.
+
+### 13. Release
+
+By participating in the Program, you agree to release and hold harmless Talent Protocol, Base, Coinbase, Inc. or any of their parents, affiliates, subsidiaries, promotion agencies, sponsors,, and each of their respective directors, officers, employees, and assigns, (collectively, the “Released Parties”) from any claims or liabilities arising from participation in the Program or use/misuse of any rewards. This includes, but is not limited to, claims related to personal injury, property damage, or reputational harm.&#x20;
+
+### 14. Limitation of Liability
+
+IN NO EVENT WILL THE RELEASED PARTIES BE LIABLE TO YOU FOR ANY DIRECT, SPECIAL, INCIDENTAL, EXEMPLARY, PUNITIVE OR CONSEQUENTIAL DAMAGES (INCLUDING LOSS OF USE, DATA, BUSINESS OR PROFITS) ARISING OUT OF OR IN CONNECTION WITH YOUR PARTICIPATION IN THE CONTEST, WHETHER SUCH LIABILITY ARISES FROM ANY CLAIM BASED UPON CONTRACT, WARRANTY, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY OR OTHERWISE, AND WHETHER OR NOT THE RELEASED PARTIES HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH LOSS OR DAMAGE.
+
+### 15. Disclaimers
+
+The program is provided "as is" and "as available" without warranties of any kind, either express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, or non-infringement.
+
+### 16. Governing Law
+
+These Terms and Conditions shall be governed by and construed in accordance with the laws of the Republic of the Marshall Islands, without regard to its conflict of law provisions. By participating in the Builder Rewards program, you agree that any dispute arising out of or relating to these Terms shall be subject to the exclusive jurisdiction of the courts of the Republic of the Marshall Islands. If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.
+
+### 17. Severability
+
+If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.
+
+### 18. Entire Agreement
+
+These Terms constitute the entire agreement between you and the Program administrators regarding the Program and supersede all prior agreements and understandings, whether written or oral.
+
+### 19. Contact Information
+
+For questions about the Program or these Terms, please visit builderscore.xyz or contact contact@talentprotocol.com.
+
+***
+
+By participating in the Builder Rewards program, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.\
