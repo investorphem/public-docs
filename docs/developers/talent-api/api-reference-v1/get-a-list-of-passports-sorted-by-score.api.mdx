@@ -1,0 +1,72 @@
+---
+id: get-a-list-of-passports-sorted-by-score
+title: "Get a list of passports sorted by score"
+description: "Get a list of passports sorted by score"
+sidebar_label: "Get a list of passports sorted by score"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVk1v4zYQ/SvEnJV1UvTkWw7b7WIvOaRFF4FhjKixxDVFKuTIqWvovxejD1uO5djJri+2zOF7b4aj4dsBYx5h/gQPGGPlA0dYJFBhwJKYgiztwGFJMIc1bV98yCAB42AOzzWFLSQQ6Lk2gTKYr9BGSiCjqIOp2HgJ+9btUuzVylimoKqBSqVb1WInEHVBJcJ8B7ythCxyMC6Hpkn2/P/c3D98vfn2+fugoCDMKMBrxu++DuoRLTlWD8Gz196q+4evak3bN6kWkkysvIsUZf2321v5Okbfq4cEtHdMjiUIq8oajRI0+xElcnfK5NMfpBkSqIKvKLDpeA6Qh1AMAUWtYSrjZQjUbDaGt8uofaBRvKvLtK2Rq63F1NKZY3osSLV71QCldKCMHBu0UUmmwaQ1kxwkF7Q/xW4XNAmYNvqXaBig3q0hro218Rco6IDeza/R6toiG5efiEi9t4Tusoo/LObKuKztJ5crszpmM1GNeFpa7xxp2R6X2tddS/a0xjHl1ybfFUr5lRpByuNYgDAWdYluqQvS6xLD+qfT9O4kzQKjQtUSqQNRk4DFyMuhApQtkU/f5gRWPpSyAhky3bBp58xBEod6sgICriR64oTVCx5KT5loKdG45QtaS5MiLvMJgOoApuo8/F6a7MKZniMw2RTuFW/IOcCuFG9prYJfGUtTY+ukJ47nWGr8x8qYGj8lKTOxsrhddlfIR4B7hPaimmKwvmvfj6EPu6eQu6v54o2wZztGv1eMuer+S2WKHLXzcEJN0zQJbCiYlaGsb+SfYJWc+slBWd/WE/Ojo60wN+518c5ccLoOgRwvK8xp8kWY0NFtUbJlkLAi1gVlKpD2IYv7afIO2HZADJgjHPaM9kqMNlZhKaP6CKb/JPD77d2p96gd1lz4YP5rU3iuKUoxXzN8IVaorIkt9sFuRR/kVNJtf18lUBIXPoM55NSWHLmAOczGHidS2AxGsA5WbBdzFeez2S6jFdaW//SRmxlWZra5gwQ2GIw0fez070NGj9JXlfnErUereov2SftSCrAQd7fqxoBheXlAzNvfLTaF2OW4uWsnjo9cYts+vUm8Pvejmu1PjelfnlUWjRP8NuFdX5enkVFbJFC0OT3BbpdipL+CbRr5u7PFUq3MRKnDGWO8O7jHKz3ypELxtGNrvkFbSxRIHYejgPnTQu7szi+/T9sFN/2GqLFfP8hKdv3yvdZU8WjtxEJLCvsO/fL5EZrmf4SBea4=
+sidebar_class_name: "get api-method"
+info_path: docs/developers/talent-api/api-reference-v1/api-v-1
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get a list of passports sorted by score"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/passports"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get a list of passports sorted by score
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"keyword","in":"query","required":false,"description":"Keyword to filter passports by name","schema":{"type":"string"}},{"name":"X-API-KEY","in":"header","description":"Your Talent Protocol API key","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"passports","content":{"application/json":{"schema":{"type":"object","properties":{"passports":{"type":"array","items":{"type":"object","properties":{"activity_score":{"type":"number","nullable":false,"description":"The score activity credentials contribute to the passport score"},"identity_score":{"type":"number","nullable":false,"description":"The score identity credentials contribute to the passport score"},"skills_score":{"type":"number","nullable":false,"description":"The score skills credentials contribute to the passport score"},"calculating_score":{"type":"boolean","nullable":false,"description":"Flag indicating if the passport is calculating"},"connections_count":{"type":"integer","nullable":false,"description":"The number of connections of the passport"},"human_checkmark":{"type":"boolean","nullable":false,"description":"Flag indication if the passport has a human checkmark"},"last_calculated_at":{"type":"string","format":"date-time","nullable":true,"description":"The last time the passport score was calculated"},"main_wallet":{"type":"string","nullable":true,"description":"The main wallet of the passport"},"passport_id":{"type":"integer","nullable":true,"description":"The id of the passport"},"score":{"type":"number","nullable":true,"description":"The score of the passport"},"passport_profile":{"type":"object","nullable":false,"properties":{"bio":{"type":"string","nullable":true,"description":"The bio of the passport"},"display_name":{"type":"string","nullable":true,"description":"The display name of the passport"},"location":{"type":"string","nullable":true,"description":"The location of the passport"},"tags":{"type":"array","items":{"type":"string","description":"A tag describing the passport profile"}}}},"verified_wallets":{"type":"array","items":{"type":"string","description":"The connected wallets of the passport"}}}}},"pagination":{"type":"object","properties":{"current_page":{"type":"integer","description":"The current page of the fetched records"},"last_page":{"type":"integer","description":"The last page of records"},"total":{"type":"integer","description":"The total amount of records"}}}}}}}},"401":{"description":"unauthorized request"}}}
+>
+  
+</StatusCodes>
+
+
+      

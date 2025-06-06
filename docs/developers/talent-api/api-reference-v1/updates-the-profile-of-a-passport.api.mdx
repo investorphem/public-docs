@@ -1,0 +1,72 @@
+---
+id: updates-the-profile-of-a-passport
+title: "Updates the profile of a passport"
+description: "Updates the profile of a passport"
+sidebar_label: "Updates the profile of a passport"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVlFP2zAQ/ivWPW1SWGDaU946hEQ1aVSoTGOoQm5ybQ1JbOxLoYvy36ez06ahBQovy0tr5/yd7e+771IDybmD5AZG0jmjLYmR1TOVo4NJBEZaWSCh5ZAaSlkgJGDa0FuVQQSq9FO0gAgydKlVhpTmyQ2kj7P4UCmLGSRkK4zApQssJCQ10MowrCOryjk0TbTJ9PtoMBoe/Ti7XudZoMzQ7mS61pUVY5lj6fdPOtW5GIyG4h5XcFiqwdX4/OJy+GcwHl78PCSdrGghSN9j+WqGCZ/cGV06dPz+6/Ex//QBTbhzUZlMEvJtpbokLIlDpTG5SiWHxneO4+vdfHp6hylBxFAGLamQbUNVm+HtFVOld48RQVnluZwyQGCvv//xAsVUaaFnghYo1lmhiSBTzuRydRuu+SPALYJghH0Zch0u52Po69X7kENtbFCltZLlpAgLty9bH30gSM5FmJuqct6DF2tCmvUTwbfjk11pVCULTVv1FzPBNYSOWLjQ/v+usxWv+m+CeYvg9xP6ggQPltwz2l4B4Mj3SmqmbSEJEuBSJVXgXuSXZbWhu7/oype+C8GtHeiZkN3KCAqkhc6C3abst952E4ifs+biesukGzYotMu1jVc2Z28jMi6J4zrDmaxyOteOmlgaFS9PIIKltIorJ3DchWwNuSSM+kLed01ru19SXfAhJxGw9i47lZ49ycIERe1TWV9H3X17NXTDQG437qjacnVQ5SxoSFHu3X00FL/8sdC6EL08YaaNdlRIT3Sb+BAietRtJEL4RLHJpSoZ2d9y3VJ0s3NkBxEk2510EsHC3+8N1PVUOryyedPw9EOFdgXJzaRjxfOYKcf/M0hmMnfP3W3LEuDTZdt8P4t+U96787XdlSuvg7ziEUTAzbTf/ZtJE62b5Pt29EbH3ruvkH/7m2CzOW7k4fVpSHE0ZoQuYscTuxWDNEVDr8ZOtmpvNBifnrMuW+MtdMaLrHzkjxz5GO5K+zP74vFzNeSynFdyzrEBlJ9/fUZOFQ==
+sidebar_class_name: "patch api-method"
+info_path: docs/developers/talent-api/api-reference-v1/api-v-1
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Updates the profile of a passport"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"patch"}
+  path={"/passport_profiles/{passport_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Updates the profile of a passport
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"passport_id","in":"path","description":"Passport id","required":true,"schema":{"type":"string"}},{"name":"X-API-KEY","in":"header","description":"Your Talent Protocol API key","schema":{"type":"string"}},{"name":"AUTHORIZATION","in":"header","description":"Your auth token","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"passport_profile":{"type":"object","properties":{"display_name":{"type":"string","description":"The display name of the passport"},"bio":{"type":"string","description":"The bio of the passport"},"tags":{"type":"string","description":"The tags of the passport"},"location":{"type":"string","format":"datetime","description":"The location of the passport"}}}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"profile updated","content":{"application/json":{"schema":{"type":"object","properties":{"passport_profile":{"type":"object","properties":{"bio":{"type":"string","nullable":true,"description":"The bio of the passport"},"display_name":{"type":"string","nullable":true,"description":"The display name of the passport"},"location":{"type":"string","nullable":true,"description":"The location of the passport"},"tags":{"type":"array","items":{"type":"string","description":"A tag describing the passport profile"}}}}}}}}},"401":{"description":"unauthorized request"}}}
+>
+  
+</StatusCodes>
+
+
+      

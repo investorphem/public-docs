@@ -2,8 +2,7 @@
 id: api
 title: "API"
 description: "This is the API documentation for the Talent Protocol API latest version."
-sidebar_label: Introduction
-sidebar_position: 0
+sidebar_label: "API"
 hide_title: true
 custom_edit_url: null
 ---
@@ -104,4 +103,11 @@ The JWT token is obtained by calling the endpoint `POST /auth/email_password_log
     {'https://docs.talentprotocol.com/docs/developers/api-pricing'}
   </a>
 </div>
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
       
