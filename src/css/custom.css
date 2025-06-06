@@ -30,3 +30,7 @@
   --ifm-color-primary-lightest: #e0e7ff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+.hide_item_from_sidebar {
+  display: none;
+}
