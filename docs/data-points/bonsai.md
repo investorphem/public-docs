@@ -1,3 +1,0 @@
-# Bonsai
-
-<table><thead><tr><th>Data Point Name</th><th>Description</th><th>Data Point Category<select><option value="lomLNr0I9Uvm" label="Identity" color="blue"></option><option value="4CcsGQO5qqP1" label="Activity" color="blue"></option><option value="vupUT60FMN6n" label="Credibility" color="blue"></option><option value="N1ap3SKQ2O9w" label="Skills [Developer]" color="blue"></option><option value="DHBuT13t8Hmk" label="Skills [Creator]" color="blue"></option></select></th></tr></thead><tbody><tr><td>Bonsai Airdrop 1</td><td>Receivers of Bonsai Airdrop 1, by verifying transfers between block numbers 54265059 and 54265178 on Polygon.</td><td><span data-option="vupUT60FMN6n">Credibility</span></td></tr></tbody></table>
