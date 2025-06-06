@@ -1,30 +1,41 @@
-import clsx from 'clsx';
-import Heading from '@theme/Heading';
-import styles from './styles.module.css';
+import clsx from "clsx";
+import Heading from "@theme/Heading";
+import styles from "./styles.module.css";
 
 const FeatureList = [
   {
-    title: 'Talent Protocol Official Documentation',
-    svgSrc: require('@site/static/img/docs.svg').default,
+    title: "Talent Protocol Official Documentation",
+    svgSrc: require("@site/static/img/docs.svg").default,
     description: (
       <>
-        This is the official documentation for Talent Protocol, a platform designed to help individuals build and showcase their professional talents.
-        Here, you will find comprehensive guides, tutorials, and resources to get started and make the most of the platform.
+        This is the official documentation for Talent Protocol, a platform
+        designed to help individuals build and showcase their professional
+        talents. Here, you will find comprehensive guides, tutorials, and
+        resources to get started and make the most of the platform.
       </>
     ),
+    buttonHref: "/docs/developers/get-started",
+    buttonLabel: "Get Started",
   },
 ];
 
-function Feature({svgSrc, title, description}) {
+function Feature({ svgSrc, title, description, buttonHref, buttonLabel }) {
   return (
-    <div className={clsx('col')}>
+    <div className={clsx("col")}>
       <div className="text--center">
-        <img src={svgSrc} className={styles.featureSvg} role="img" alt={title} />
+        <img
+          src={svgSrc}
+          className={styles.featureSvg}
+          role="img"
+          alt={title}
+        />
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
         <p>{description}</p>
-        <a href="/docs" className="button button--primary">Get Started</a>
+        <a href={buttonHref} className="button button--primary">
+          {buttonLabel}
+        </a>
       </div>
     </div>
   );
