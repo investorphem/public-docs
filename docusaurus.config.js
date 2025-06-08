@@ -4,8 +4,10 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
+import "dotenv/config";
+
 import { themes as prismThemes } from "prism-react-renderer";
-import { version } from "react";
+// import { version } from "react";
 // import apiSideBarItems from "./docs/developers/talent-api/api-reference-v2/sidebar.ts";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
@@ -70,6 +72,7 @@ const config = {
   },
 
   plugins: [
+    "./plugins/docusaurus-plugin-gen-data-points",
     [
       "@docusaurus/plugin-content-pages",
       {
