@@ -29,7 +29,7 @@ jobs:
         run: |
           npm run docusaurus clean-api-docs all
           npm run docusaurus gen-api-docs all
-          npm run docusaurue clean-data-points-doc
+          npm run docusaurus clean-data-points-doc
           npm run docusaurus gen-data-points-doc
       - name: Build website
         run: npm run build
