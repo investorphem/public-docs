@@ -10,7 +10,7 @@
       2. `docs/developers/talent-api/api-reference-v1/*.mdx`. Except from the **index.mdx**, if it is present.
       3. `docs/developers/talent-api/api-reference-v2/*.mdx`. Except from the **index.mdx**, if it is present.
 3. Inspect locally by running `npm run start`. While you continue making changes to the pages your local browser will reflect these changes immediately.
-4. If you are ready, it's good to try `npm build` to see whether documentation site is built successfully locally.
+4. **Important** As soon as you are ready, try `npm build` to see whether documentation site is built successfully locally. This will also find any broken links that may exist to the generated documents. Build will fail and deployment will not be possible if there are broken links.
 5. If `npm build` succeeds, try `npm run serve` to see how documentation site is served from the `build` folder.
 6. As soon as you are happy, commit and create a PR.
 7. Make sure that PR action builds successfully.
