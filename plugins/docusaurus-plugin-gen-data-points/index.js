@@ -54,7 +54,10 @@ module.exports = function genDataPointsPlugin(context, options) {
             console.debug(
               `Processing data issuer: ${dataIssuer.name} (${dataIssuer.slug})`
             );
-            const filePath = path.join(outputDir, `${dataIssuer.slug}.mdx`);
+            const filePath = path.join(
+              outputDir,
+              `${dataIssuer.slug.replace("_", "-")}.mdx`
+            );
             let content = `
 # ${dataIssuer.name}
 
