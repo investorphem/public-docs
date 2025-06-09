@@ -5,12 +5,16 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "docusaurus build",
+    "build": "npm run generate-docs && npm run docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
-    "gen-api_docs": "docusaurus gen-api_docs",
+    "clean-api-docs": "docusaurus clean-api-docs all",
+    "gen-api-docs": "docusaurus gen-api-docs all",
+    "clean-data-points-docs": "docusaurus clean-data-points-docs",
+    "gen-data-points-docs": "docusaurus gen-data-points-docs",
+    "generate-docs": "npm run clean-api-docs && npm run gen-api-docs && npm run clean-data-points-docs && npm run gen-data-points-docs",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids"
   },

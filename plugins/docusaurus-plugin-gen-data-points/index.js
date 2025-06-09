@@ -10,7 +10,7 @@ module.exports = function genDataPointsPlugin(context, options) {
 
     extendCli(cli) {
       cli
-        .command("gen-data-points-doc")
+        .command("gen-data-points-docs")
         .description(
           "Fetch Talent Protocol Data Points documentation generate .mdx docs"
         )
@@ -76,7 +76,7 @@ module.exports = function genDataPointsPlugin(context, options) {
           console.log("✅ Generation complete!");
         });
       cli
-        .command("clean-data-points-doc")
+        .command("clean-data-points-docs")
         .description(
           "Remove Talent Protocol Data Points documentation .mdx docs"
         )
