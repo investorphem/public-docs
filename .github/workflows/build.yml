@@ -36,10 +36,7 @@ jobs:
 
       - name: OpenAPI Clean and Generate Documents
         run: |
-          npm run docusaurus clean-api-docs all
-          npm run docusaurus gen-api-docs all
-          npm run docusaurus clean-data-points-doc
-          npm run docusaurus gen-data-points-doc
+          npm run generate-docs
       - name: Build website
         run: npm run build
 

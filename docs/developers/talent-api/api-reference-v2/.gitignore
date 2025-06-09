@@ -1,5 +1,6 @@
 # Ignore all .mdx files in docs/
 *.mdx
+sidebar.*
 
 # But do not ignore index.mdx
 !index.mdx
