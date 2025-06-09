@@ -9,35 +9,11 @@ on:
 
 jobs:
   build:
-    name: Build Docusaurus
-    runs-on: ubuntu-latest
-    env:
+    uses: ./.github/workflows/build.yml
+    with:
+      upload_artifact: true
+    secrets:
       TALENT_PROTOCOL_API_KEY: ${{ secrets.TALENT_PROTOCOL_API_KEY }}
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: OpenAPI Clean and Generate Documents
-        run: |
-          npm run docusaurus clean-api-docs all
-          npm run docusaurus gen-api-docs all
-          npm run docusaurus clean-data-points-doc
-          npm run docusaurus gen-data-points-doc
-      - name: Build website
-        run: npm run build
-
-      - name: Upload Build Artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: build
 
   deploy:
     name: Deploy to GitHub Pages
