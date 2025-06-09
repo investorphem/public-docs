@@ -61,6 +61,7 @@ module.exports = function genDataPointsPlugin(context, options) {
             let content = `
 # ${dataIssuer.name}
 
+${dataIssuer.description || `${dataIssuer.name} data points`}
 
 | Data Point Name | Description | Data Point Category |
 |-----------------|-------------|---------------------|
