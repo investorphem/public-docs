@@ -56,8 +56,8 @@ const config = {
   deploymentBranch: "main", // The branch that GitHub pages will deploy from.
   trailingSlash: false,
 
-  onBrokenLinks: "warn",
-  onBrokenMarkdownLinks: "warn",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "throw",
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
