@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    if: ${{ github.event_name == 'repository_dispatch' && github.event.type == 'data-points-updated' || github.event_name == 'push' }}
+    if: ${{ github.event_name == 'repository_dispatch' && github.event.action == 'data-points-updated' && github.event.client_payload.value == '1' || github.event_name == 'push' }}
     uses: ./.github/workflows/build.yml
     with:
       upload_artifact: true
@@ -19,7 +19,6 @@ jobs:
       TALENT_PROTOCOL_API_KEY: ${{ secrets.TALENT_PROTOCOL_API_KEY }}
 
   deploy:
-    if: ${{ github.event_name == 'repository_dispatch' && github.event.type == 'data-points-updated' || github.event_name == 'push' }}
     name: Deploy to GitHub Pages
     needs: build
 
