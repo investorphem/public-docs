@@ -1,6 +1,8 @@
 name: Build Documentation Pages and Deploy to GitHub Pages
 
 on:
+  repository_dispatch:
+    types: [data-points-updated]
   push:
     branches:
       - main
@@ -9,6 +11,7 @@ on:
 
 jobs:
   build:
+    if: ${{ github.event_name == 'repository_dispatch' && github.event.type == 'data-points-updated' || github.event_name == 'push' }}
     uses: ./.github/workflows/build.yml
     with:
       upload_artifact: true
@@ -16,6 +19,7 @@ jobs:
       TALENT_PROTOCOL_API_KEY: ${{ secrets.TALENT_PROTOCOL_API_KEY }}
 
   deploy:
+    if: ${{ github.event_name == 'repository_dispatch' && github.event.type == 'data-points-updated' || github.event_name == 'push' }}
     name: Deploy to GitHub Pages
     needs: build
 
