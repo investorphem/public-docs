@@ -20,11 +20,6 @@ module.exports = function genDataPointsPlugin(context, options) {
             fs.mkdirSync(outputDir, { recursive: true });
           }
 
-          console.debug(
-            "TALENT_PROTOCOL_API_KEY:",
-            process.env.TALENT_PROTOCOL_API_KEY
-          );
-
           const requestOptions = {
             headers: {
               "Content-Type": "application/json",
@@ -46,7 +41,6 @@ module.exports = function genDataPointsPlugin(context, options) {
             return;
           }
           const data = await response.json();
-          // console.debug(`Response data: ${JSON.stringify(data, null, 2)}`);
 
           const dataIssuers = data.data_issuers;
 
