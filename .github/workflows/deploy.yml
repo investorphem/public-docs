@@ -2,7 +2,7 @@ name: Build Documentation Pages and Deploy to GitHub Pages
 
 on:
   repository_dispatch:
-    types: [data-points-updated]
+    types: [data-points-updated, open-api-docs-updated]
   push:
     branches:
       - main
